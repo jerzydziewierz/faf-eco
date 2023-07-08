@@ -29,8 +29,14 @@ def buildorder_simple1(gs: mict = mict()):
     # then,
     # build mavor
 
+    # if the end can be done, then do it
     if Endgame.can_be_built(unit_name_list(gs.current_unit_list)):
         return Endgame()
+
+    # First step is to build land factory, it's just how all the builds work
+    # let's say that we will only ever want one land factory T1
+    if not 'LandFactoryT1' in unit_name_list(gs.current_unit_list):
+        return LandFactoryT1()
 
     if MexT1.can_be_built(unit_name_list(gs.current_unit_list)):
         if gs.energy_production_capability > 8:  # but do not build if there is not enough power.

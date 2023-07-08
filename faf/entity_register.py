@@ -12,4 +12,6 @@ entity_register = [
     Mavor(),
     PowerplantT1(),
     MexT1(),
+    EngineerT1(),
+    PowerplantT1(),
     ]
